@@ -12,10 +12,9 @@ export default async function SinglePost({ params }) {
 
     return (
         <div>
-            <div key={singlePost.id} className='border-2 border-gray-300 space-y-3 p-3 my-3 rounded-2xl'>
-                <p>User-id: {singlePost.id}</p>
+            <div key={singlePost.id} className='border-2 border-gray-300 space-y-5 p-3 my-3 rounded-2xl'>
                 <p>Title: {singlePost.title}</p>
-                    <p>Body: {singlePost.body}</p>
+                <p>Body: {singlePost.body}</p>
             </div>
         </div>
     )

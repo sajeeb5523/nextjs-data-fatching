@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 export const getComments = async () => {
@@ -11,12 +12,16 @@ export default async function Comments() {
 
     return (
         <div>
-            {comments.map((comment) => {
+            {comments.map((singleComment) => {
                 return (
-                   <div key={comment.id} className='border-2 border-gray-300 space-y-3 p-3 my-3 rounded-2xl'>
-                        <p>Name: {comment.name}</p>
-                        <p>Body: {comment.body}</p>
-                        <p>By: {comment.email}</p>
+                    <div key={singleComment.id} className='border-2 border-gray-300 space-y-3 p-3 my-3 rounded-2xl'>
+                        <p>ID: {singleComment.id}</p>
+                        <p>Name: {singleComment.name}</p>
+                        <p>Body: {singleComment.body}</p>
+                        <p>By: {singleComment.email}</p>
+                        <Link href={`/comments/${singleComment.id}`} className='text-blue-500'>
+                            Details
+                        </Link>
                     </div>
                 )
             })}
