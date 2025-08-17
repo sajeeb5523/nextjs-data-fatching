@@ -1,0 +1,22 @@
+import React from 'react'
+
+export const getSinglePost = async (post_id) => {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${post_id}`);
+    const data = await res.json();
+    return data;
+}
+
+export default async function SinglePost({ params }) {
+    const p = await params;
+    const singlePost = await getSinglePost(p.id);
+
+    return (
+        <div>
+            <div key={singlePost.id} className='border-2 border-gray-300 space-y-3 p-3 my-3 rounded-2xl'>
+                <p>User-id: {singlePost.id}</p>
+                <p>Title: {singlePost.title}</p>
+                    <p>Body: {singlePost.body}</p>
+            </div>
+        </div>
+    )
+}

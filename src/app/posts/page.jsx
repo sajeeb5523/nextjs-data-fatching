@@ -19,6 +19,7 @@ export default async function Posts() {
                         <p>User-id: {singlePost.id}</p>
                         <p>Title: {singlePost.title}</p>
                         <p>Body: {singlePost.body}</p>
+                        <Link href={`/posts/${singlePost.id}`} className='text-blue-500'>Details</Link>
                     </div>
                 );
             })}
