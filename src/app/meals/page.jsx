@@ -1,6 +1,11 @@
 
 import MealSearchInput from "./components/MealSearchInput";
 
+export const metadata = {
+    title: "All Meals",
+    description: "Meals loaded form themealdb API",  
+};
+
 export default async function MealsPage({ searchParams }) {
     const query = await searchParams;
 

@@ -7,6 +7,11 @@ export const getComments = async () => {
     return data;
 }
 
+export const metadata = {
+    title: "All Comments",
+    description: "Loading json placeholder posts using server Component",
+};
+
 export default async function Comments() {
     const comments = await getComments();
 

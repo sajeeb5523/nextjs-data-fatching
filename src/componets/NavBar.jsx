@@ -9,6 +9,7 @@ export default function NavBar() {
                     <Link href="/"><li>Home</li></Link>
                     <Link href="/posts"><li>Posts</li></Link>
                     <Link href="/comments"><li>Comments</li></Link>
+                    <Link href="/meals"><li>Meals</li></Link>
                 </ul>
             </nav>
         </div>
