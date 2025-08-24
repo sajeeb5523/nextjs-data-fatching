@@ -1,9 +1,10 @@
 
+import Link from "next/link";
 import MealSearchInput from "./components/MealSearchInput";
 
 export const metadata = {
     title: "All Meals",
-    description: "Meals loaded form themealdb API",  
+    description: "Meals loaded form themealdb API",
 };
 
 export default async function MealsPage({ searchParams }) {
@@ -29,17 +30,14 @@ export default async function MealsPage({ searchParams }) {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4'>
-                {meals.length > 0 ? (
-                    meals.map((singleMeal) => (
-                        <div key={singleMeal.idMeal} className='border border-gray-300 p-4 space-y-5 rounded-xl'>
-                            <img src={singleMeal.strMealThumb} alt={singleMeal.strMeal} className="w-full h-48 object-cover rounded" />
-                            <p className='text-2xl font-bold'>{singleMeal.strMeal}</p>
-                            <p>{singleMeal.strInstructions}</p>
-                        </div>
-                    ))
-                ) : (
-                    <p className="col-span-3 text-center text-gray-500">No meals found.</p>
-                )}
+                {meals.map((singleMeal) => (
+                    <div key={singleMeal.idMeal} className='border border-gray-300 p-4 space-y-5 rounded-xl'>
+                        <img src={singleMeal.strMealThumb} alt={singleMeal.strMeal} className="w-full h-48 object-cover rounded" />
+                        <p className='text-2xl font-bold'>{singleMeal.strMeal}</p>
+                        <p>{singleMeal.strInstructions}</p>
+                        <Link href={`/meals/${singleMeal.idMeal}`}>Details</Link>
+                    </div>
+                ))}
             </div>
         </div>
     );
